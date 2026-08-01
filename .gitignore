@@ -1,0 +1,36 @@
+# ===== Qt / CMake build =====
+build/
+CMakeLists.txt.user
+CMakeLists.txt.user.*
+*.autosave
+
+# ===== bldc firmware (vedderb/bldc) build artifacts =====
+firmware/bldc/build/
+firmware/bldc/tools/
+firmware/bldc/downloads/
+**/*.o
+**/*.elf
+**/*.bin
+**/*.hex
+**/*.map
+**/*.lst
+**/*.dep
+**/*.dmp
+
+# ===== SolidWorks lock files =====
+~$*.SLDPRT
+~$*.SLDASM
+
+# ===== Arduino / ESP32 build cache =====
+*.ino.elf
+*.ino.bin
+build/
+
+# ===== IDE / OS junk =====
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ===== Logs =====
+*.log

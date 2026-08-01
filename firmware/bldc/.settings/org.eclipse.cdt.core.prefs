@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.toolchain.base.581614985/PATH/delimiter=;
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.toolchain.base.581614985/PATH/operation=replace
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.toolchain.base.581614985/PATH/value=C\:\\msys64\\usr\\bin; C\:\\Windows\\System32\\WindowsPowerShell\\v1.0; D\:\\Git\\cmd
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.toolchain.base.581614985/append=true
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.toolchain.base.581614985/appendContributed=true
