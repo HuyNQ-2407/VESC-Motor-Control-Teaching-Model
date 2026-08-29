@@ -1,6 +1,6 @@
 <div align="center">
 
-# ⚡ VESC_AML
+# ⚡ VESC-BASED MOTOR CONTROL
 
 **Custom PID motor control firmware + real-time Qt monitoring/control app for a VESC-based motor controller**
 
