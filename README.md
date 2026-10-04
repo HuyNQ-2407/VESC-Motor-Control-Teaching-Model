@@ -1,6 +1,6 @@
 <div align="center">
 
-# ⚡ VESC-BASED MOTOR CONTROL
+# VESC-BASED MOTOR CONTROL
 
 **Custom PID motor control firmware + real-time Qt monitoring/control app for a VESC-based motor controller**
 
@@ -15,15 +15,15 @@
 
 ---
 
-## 📖 Overview
+## Overview
 
 A full monitoring and control stack for a VESC motor controller:
 
-- 🎛️ **Custom firmware** (fork of [vedderb/bldc](https://github.com/vedderb/bldc)) — replaces the stock ADC throttle path with a dedicated PID speed controller, and exposes target speed telemetry over the VESC comm protocol.
-- 📡 **ESP32 bridge** — connects to the VESC over UART, exposes a TCP server so the Qt app can connect wirelessly, with local Hall-sensor RPM/direction sensing and an I2C LCD status display.
-- 🖥️ **Qt6 desktop app** — real-time voltage/current/RPM/duty monitoring, live PID-tunable remote control, and a real-time RPM chart (actual vs. target) built with Qt Charts.
+- **Custom firmware** (fork of [vedderb/bldc](https://github.com/vedderb/bldc)) — replaces the stock ADC throttle path with a dedicated PID speed controller, and exposes target speed telemetry over the VESC comm protocol.
+- **ESP32 bridge** — connects to the VESC over UART, exposes a TCP server so the Qt app can connect wirelessly, with local Hall-sensor RPM/direction sensing and an I2C LCD status display.
+- **Qt6 desktop app** — real-time voltage/current/RPM/duty monitoring, live PID-tunable remote control, and a real-time RPM chart (actual vs. target) built with Qt Charts.
 
-## ✨ Features
+## Features
 
 | Component | What it does |
 |---|---|
@@ -31,7 +31,7 @@ A full monitoring and control stack for a VESC motor controller:
 | ESP32 bridge | Non-blocking TCP server, ring-buffered UART parsing, 2-channel Hall RPM + direction detection, LCD status display |
 | Qt app | Live telemetry cards, PID tuning, runtime RPM/current limit control, real-time scrolling chart, terminal console |
 
-## 🔧 Hardware
+## Hardware
 
 - VESC-compatible motor controller (developed against a Flipsky 4.12 board)
 - ESP32 DevKit (WiFi bridge + Hall sensor interface + I2C LCD)
@@ -39,9 +39,9 @@ A full monitoring and control stack for a VESC motor controller:
 - 2-channel Hall sensor motor feedback
 - Custom SolidWorks-designed mounting/enclosure (see `hardware/`)
 
-## 📂 Repository Structure
+## Repository Structure
 
-```
+```text
 VESC_AML/
 ├── README.md
 ├── docs/
@@ -63,7 +63,7 @@ VESC_AML/
     └── *.SLDPRT / *.SLDASM
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 <details>
 <summary><b>1. Firmware (bldc)</b></summary>
@@ -99,16 +99,17 @@ On launch, enter the ESP32's IP address (shown on its LCD after WiFi connects) a
 
 </details>
 
-## ⚠️ Notes
+## Notes
 
-- This is a **fork**, not a from-scratch firmware — see [`firmware/bldc/CUSTOM_CHANGES.md`](firmware/bldc/CUSTOM_CHANGES.md) for the precise diff summary before assuming any given file is original work.
+> ⚠️ This is a **fork**, not a from-scratch firmware — see [`firmware/bldc/CUSTOM_CHANGES.md`](firmware/bldc/CUSTOM_CHANGES.md) for the precise diff summary before assuming any given file is original work.
+
 - The Qt app and firmware are coupled by exact string matching in a few places (e.g. the app parses specific terminal output lines from the firmware). If you change firmware print strings, check `app/mainwindow.cpp`'s `onTerminalOutput()` and `app/protocol.cpp`'s `parseResponse()` for matching logic before assuming it's safe.
 
-## 🙏 Credits
+## Credits
 
 - Firmware based on [vedderb/bldc](https://github.com/vedderb/bldc) (GPL-3.0). See [`firmware/bldc/CUSTOM_CHANGES.md`](firmware/bldc/CUSTOM_CHANGES.md) for what was added/modified here.
 - Charting in the Qt app uses [Qt Charts](https://doc.qt.io/qt-6/qtcharts-index.html), part of the Qt framework.
 
-## 📄 License
+## License
 
 Firmware (`firmware/bldc/`) is GPL-3.0, inherited from upstream `vedderb/bldc`. The Qt app and ESP32 bridge code are original work by the author.
